@@ -1,0 +1,25 @@
+.sub-tree {
+  margin-left: 10px;
+
+  &.show {
+    display: block;
+  }
+
+  &.hide {
+    display: none;
+  }
+}
+
+.node {
+  display: block;
+  background: gray;
+  color: #ffffff;
+
+  .content {
+    padding: 10px 20px;
+  }
+}
+
+.pointer {
+  cursor: pointer;
+}

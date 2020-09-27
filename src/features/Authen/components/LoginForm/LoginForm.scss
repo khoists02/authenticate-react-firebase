@@ -1,0 +1,21 @@
+.login-form {
+  max-width: 400px;
+  width: 400px;
+  padding: 70px 40px;
+  border: 1px solid grey;
+  border-radius: 5px;
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+
+    & > .btn {
+      width: 100%;
+    }
+  }
+}
+
+.error {
+  font-size: 14px;
+  color: red;
+}
