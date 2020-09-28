@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import TreeView from 'components/TreeView';
 import './Main.scss';
 
+MainPage.propTypes = {};
+
 function MainPage(props) {
+
+  const [ isChange, setIsChange ] = useState(false);
+  const [ isChange2, setIsChange2 ] = useState(false);
+
   const menus = [
     {
       id: 1,
@@ -31,6 +37,19 @@ function MainPage(props) {
     }
   ];
 
+  // useEffect(() => {
+  //   console.log('Component did mount');
+  // }, []); // Dependencies 
+
+
+  // useEffect(() => {
+  //   console.log('Component did update'); 
+  // })
+
+  // useEffect(()=> {
+  //   console.log('Is Change render');
+  // }, [isChange])
+
   const trees = menus.map((menu) => {
     return <TreeView key={menu.id} node={menu}/>;
   });
@@ -39,14 +58,17 @@ function MainPage(props) {
     <div className="home">
       <h1>Welcome main page</h1>
       <h2>Tree node example</h2>
-      {trees.map((node) => node )}
+      {trees}
+
+      <div className="btn-group" style={{ marginTop: 10 }}>
+        <button className="button" color="success" onClick={()=> setIsChange(!isChange)}>Change 1</button>
+        <button className="button" color="success" onClick={()=> setIsChange2(!isChange2)}>Change 2</button>
+      </div>
+
+      <span> {isChange}</span>
     </div>
   )
 }
 
-MainPage.propTypes = {
-
-}
-
-export default MainPage
+export default MainPage;
 

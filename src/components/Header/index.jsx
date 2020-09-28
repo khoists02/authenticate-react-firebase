@@ -4,12 +4,16 @@ import { Link, useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { logout } from '../../app/userSlice';
 import firebase from 'firebase';
+import { useAuthDataContext } from '../../auth-provider';
 import './Header.scss';
 
 
 function Header({currentUser }) {
   const dispatch = useDispatch();
   const history = useHistory();
+
+  // const { user, onLogout } = useAuthDataContext();
+  // console.log({user});
 
   const handleLogout = () => {
     firebase.auth().signOut()
